@@ -1,0 +1,28 @@
+package com.youkeda;
+
+import java.util.Arrays;
+
+public class maopao {
+
+	// 冒泡排序
+	public static void bubbleSort(int[] array) {
+		// 每次循环，都能冒泡出剩余元素中最大的元素，因此需要循环 array.length 次
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array.length - i - 1; j++) {
+				if (array[j] < array[j + 1]) {
+					int tmep = array[j + 1];
+					array[j + 1] = array[j];
+					array[j] = tmep;
+				}
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] array = { 9, 2, 4, 7, 5, 3 };
+		// Arrays.toString 可以方便打印数组内容
+		System.out.println(Arrays.toString(array));
+		bubbleSort(array);
+		System.out.println(Arrays.toString(array));
+	}
+}
